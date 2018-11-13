@@ -39,9 +39,10 @@ echo "Host: ";
 echo gethostname();
 if (! preg_match('/(curl.*|^$)/',$user_agent)) {
   echo '<br>Total Time: '.number_format($total_time,2).' seconds.';
-  echo '<br><br><font size="1">Version 0.1</font>';
+  echo '<br><br><font size="1">Version 0.2</font>';
 }  else {
-  echo '\nTotal Time: '.number_format($total_time,2).' seconds.';
+  echo "\n";
+  echo 'Total Time: '.number_format($total_time,2).' seconds.';
 }
 
 ?>
