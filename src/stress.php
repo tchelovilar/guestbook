@@ -11,7 +11,8 @@ for($i = 0; $i < 10000000; $i++) {
 }
 
 // 
-$user_agent=isset($_SERVER['HTTP_USER_AGENT']);
+if  (isset($_SERVER['HTTP_USER_AGENT']))
+  $user_agent=$_SERVER['HTTP_USER_AGENT'];
 
 
 $time = microtime();
@@ -36,12 +37,11 @@ if ($_REQUEST["nome"]) {
 //
 echo "Host: ";
 echo gethostname();
-if (! preg_match("/curl.*|^$/",$user_agent)) {
-  echo "  \n";
-  echo "<br>";
-  echo 'Total Time: '.number_format($total_time,2).' seconds.';
-  
-  echo '<br><br><font size="1">Version 0.16</font>';
+if (! preg_match('/(curl.*|^$)/',$user_agent)) {
+  echo '<br>Total Time: '.number_format($total_time,2).' seconds.';
+  echo '<br><br><font size="1">Version 0.1</font>';
+}  else {
+  echo '\nTotal Time: '.number_format($total_time,2).' seconds.';
 }
 
 ?>
